@@ -1,0 +1,72 @@
+{
+  "name": "PrayerTimes",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the prayer or lesson"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "prayer",
+        "lesson"
+      ],
+      "description": "Type of event"
+    },
+    "prayer_type": {
+      "type": "string",
+      "description": "Type of prayer if applicable"
+    },
+    "time_type": {
+      "type": "string",
+      "enum": [
+        "fixed",
+        "relative"
+      ],
+      "description": "Whether time is fixed or relative"
+    },
+    "fixed_time": {
+      "type": "string",
+      "description": "Fixed time for the event"
+    },
+    "anchor_time_id": {
+      "type": "string",
+      "description": "Reference time ID for relative times"
+    },
+    "offset_minutes": {
+      "type": "number",
+      "description": "Minutes offset from anchor time"
+    },
+    "valid_on": {
+      "type": "array",
+      "description": "Days when this event is valid",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "weekday",
+              "special"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "time_type"
+  ]
+}

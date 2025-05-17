@@ -1,0 +1,20 @@
+{
+  "name": "Settings",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string",
+      "description": "Setting key name"
+    },
+    "value": {
+      "type": "object",
+      "description": "Setting value as JSON"
+    }
+  },
+  "required": [
+    "key"
+  ]
+}
